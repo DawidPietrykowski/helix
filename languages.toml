@@ -58,7 +58,6 @@ gleam = { command = "gleam", args = ["lsp"] }
 glsl_analyzer = { command = "glsl_analyzer" }
 glsld = { command = "glsld", args = ["--stdio"] }
 graphql-language-service = { command = "graphql-lsp", args = ["server", "-m", "stream"] }
-hare-lsp = { command = "hare-lsp", args = ["-S"] }
 harper-ls = { command = "harper-ls", args = ["--stdio"] }
 haskell-language-server = { command = "haskell-language-server-wrapper", args = ["--lsp"] }
 hdls = { command = "hdls" }
@@ -2556,23 +2555,6 @@ language-servers = [ "vala-language-server" ]
 [[grammar]]
 name = "vala"
 source = { git = "https://github.com/vala-lang/tree-sitter-vala", rev = "c9eea93ba2ec4ec1485392db11945819779745b3" }
-
-[[language]]
-name = "hare"
-scope = "source.hare"
-injection-regex = "hare"
-file-types = ["ha"]
-comment-token = "//"
-indent = { tab-width = 8, unit = "\t" }
-language-servers = [
-  { except-features = [
-    "code-action", "completion", "format", "inlay-hints", "rename-symbol", "workspace-symbols",
-  ], name = "hare-lsp" },
-]
-
-[[grammar]]
-name = "hare"
-source = { git = "https://git.sr.ht/~ecs/tree-sitter-hare", rev = "07035a248943575444aa0b893ffe306e1444c0ab" }
 
 [[language]]
 name = "devicetree"
