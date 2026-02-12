@@ -37,7 +37,6 @@ dhall-lsp-server = { command = "dhall-lsp-server" }
 djlsp = { command = "djlsp" }
 docker-langserver = { command = "docker-langserver", args = ["--stdio"] }
 docker-compose-langserver = { command = "docker-compose-langserver", args = ["--stdio"]}
-dot-language-server = { command = "dot-language-server", args = ["--stdio"] }
 dts-lsp = { command = "dts-lsp" }
 earthlyls = { command = "earthlyls" }
 eiffel-language-server = {command = "eiffel-language-server"}
@@ -2846,20 +2845,6 @@ indent = { tab-width = 2, unit = "  " }
 [[grammar]]
 name = "ungrammar"
 source = { git = "https://github.com/Philipp-M/tree-sitter-ungrammar", rev = "a7e104629cff5a8b7367187610631e8f5eb7c6ea" }
-
-[[language]]
-name = "dot"
-scope = "source.dot"
-injection-regex = "dot"
-file-types = ["dot"]
-comment-token = "//"
-block-comment-tokens = { start = "/*", end = "*/" }
-indent = { tab-width = 4, unit = "    " }
-language-servers = [ "dot-language-server" ]
-
-[[grammar]]
-name = "dot"
-source = { git = "https://github.com/rydesun/tree-sitter-dot", rev = "917230743aa10f45a408fea2ddb54bbbf5fbe7b7" }
 
 [[language]]
 name = "cue"
